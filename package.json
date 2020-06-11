@@ -1,0 +1,29 @@
+{
+  "name": "typescript-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:build": "tsc -w",
+    "start:run": "nodemon build/index.js",
+    "start": "concurrently npm:start:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edubskiy/typescript-express.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edubskiy/typescript-express/issues"
+  },
+  "homepage": "https://github.com/edubskiy/typescript-express#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "concurrently": "^5.2.0",
+    "cookie-session": "^1.4.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4"
+  }
+}
