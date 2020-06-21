@@ -1,10 +1,10 @@
 import 'reflect-metadata'
 import express from 'express'
 
-export const router = express.Router()
-
 export function controller(routePrefix: string) {
   return (target: Function) => {
+    const router = express.Router()
+
     for (let key in target.prototype) {
       const routeHandler = target.prototype[key]
 
