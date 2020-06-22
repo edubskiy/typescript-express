@@ -3,7 +3,7 @@ import { Request, Response } from 'express';
 import { get, controller, use } from '../decorators';
 
 function logger(req: Request, res: Response, next: NextFunction) {
-  console.log('request was made');
+  console.log('logging request with logger middleware');
   next();
 }
 
