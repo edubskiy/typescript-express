@@ -1,9 +1,16 @@
+import { NextFunction } from 'express';
 import { Request, Response } from 'express';
-import { get, controller } from '../decorators';
+import { get, controller, use } from '../decorators';
+
+function logger(req: Request, res: Response, next: NextFunction) {
+  console.log('logging request with logger middleware');
+  next();
+}
 
 @controller('/auth')
 class LoginController {
   @get('/login')
+  @use(logger)
   getLogin(req: Request, res: Response): void {
     res.send(`
       <form method="POST">
@@ -18,5 +25,5 @@ class LoginController {
         <button>Submit</button>
       </form>
     `);
-  }  
+  }
 }
